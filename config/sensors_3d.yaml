@@ -1,0 +1,29 @@
+sensors:
+  - sensor_plugin: occupancy_map_monitor/DepthImageOctomapUpdater
+    image_topic: /camera1/depth/image_raw
+    queue_size: 5
+    near_clipping_plane_distance: 0.3
+    far_clipping_plane_distance: 30.0
+    shadow_threshold: 0.2
+    padding_scale: 1.15
+    padding_offset: 0.02
+    max_update_rate: 10.0
+    filtered_cloud_topic: filtered_cloud1
+  - sensor_plugin: occupancy_map_monitor/DepthImageOctomapUpdater
+    image_topic: /camera2/depth/image_raw
+    queue_size: 5
+    near_clipping_plane_distance: 0.3
+    far_clipping_plane_distance: 30.0
+    shadow_threshold: 0.2
+    padding_scale: 1.15
+    padding_offset: 0.02
+    max_update_rate: 10.0
+    filtered_cloud_topic: filtered_cloud2
+  - sensor_plugin: occupancy_map_monitor/PointCloudOctomapUpdater
+    point_cloud_topic: /os1_cloud_node/points
+    point_subsample: 1
+    max_range: 30.0
+    padding_offset: 0.01
+    padding_scale: 1.
+    max_update_rate: 5.0  
+    filtered_cloud_topic: /filtered_cloud3
